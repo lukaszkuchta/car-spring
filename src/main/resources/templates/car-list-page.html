@@ -1,0 +1,29 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Car List Page</title>
+  <link rel="stylesheet" href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
+</head>
+<body>
+<div class="d-flex flex-column w-50 m-auto">
+  <h3>Car List Page</h3>
+  <div class="container">
+    <div class="row border-bottom">
+      <div class="col-3">Identyfikator</div>
+      <div class="col-2">Nr rej.</div>
+      <div class="col-2">Drzwi</div>
+      <div class="col-3">Data rej.</div>
+      <div class="col-2">Pojemnosc</div>
+    </div>
+    <div class="row border-bottom" th:each="samochod : ${atrybutListaSamochodow}"> <!-- pętla wierszy obiektów w liście -->
+      <div class="col-3" th:text="${samochod.getId()}"></div>
+      <div class="col-2" th:text="${samochod.getNrRejestracyjny()}"></div>
+      <div class="col-2" th:text="${samochod.getIloscDrzwi()}"></div>
+      <div class="col-3" th:text="${samochod.getDataPierwszejRejestracji()}"></div>
+      <div class="col-2" th:text="${samochod.getPojemnoscSilnika()}"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
